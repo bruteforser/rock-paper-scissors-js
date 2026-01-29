@@ -22,11 +22,8 @@
   margin: 0;
 }
 
-html {
-  display: grid;
-}
-
 body {
+  display: grid;
   min-height: 100vh;
   place-items: center;
   font-family: "Ubuntu Sans Mono", monospace; 
@@ -39,4 +36,6 @@ body {
 #game-wrapper h1 {
   margin-bottom: 40px;
 }
+
+
 
