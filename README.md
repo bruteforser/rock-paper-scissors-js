@@ -1,2 +1,2 @@
-# rock-paper-scissors-js
-A browser-based Rock Paper Scissors game built with vanilla JavaScript.
+# Rock Paper Scissors
+A simple Rock Paper Scissors game using vanilla js.
