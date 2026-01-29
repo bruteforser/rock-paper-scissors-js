@@ -1,6 +1,8 @@
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
+const gameContainer = document.querySelector("#game-wrapper");
+const drawGameResult = document.createElement("div");
 
 // Define choices
 const CHOICES = ["rock", "paper", "scissors"];
@@ -25,13 +27,18 @@ function getResult(player, cpu) {
 
 
 rock.addEventListener("click", () => {
-  getResult(rock, computerChoice());
-})
+  const result = getResult(rock, computerChoice());
+  drawGameResult.textContent = result;
+  container.appendChild(drawGameResult);
+});
+
 paper.addEventListener("click", () => {
-  computerChoice = gameRNG();
-  playerChoice = paper;
-})
+  const result = getResult(paper, computerChoice());
+  drawGameResult.textContent = result;
+  container.appendChild(drawGameResult);
+});
 scissors.addEventListener("click", () => {
-  computerChoice = gameRNG();
-  playerChoice = scissors;
-})
+  const result = getResult(scissors, computerChoice());
+  drawGameResult.textContent = result;
+  container.appendChild(drawGameResult);
+});
