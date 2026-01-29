@@ -1,2 +1,2 @@
 # Rock Paper Scissors
-A simple Rock Paper Scissors game using vanilla js.
+Vanilla JS and CSS practice project.
