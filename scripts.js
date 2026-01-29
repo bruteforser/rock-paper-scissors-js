@@ -16,15 +16,16 @@ function computerChoice() {
 function getResult(player, cpu) {
   if (player === cpu) {
     return "tie";
-  } else if (player === "rock" && cpu === "paper" ||
+  } else if (player === "rock" && cpu === "scissors" ||
              player === "paper" && cpu === "rock" ||
              player === "scissors" && cpu === "paper") {
     return "player win";
-  } else {
+  } else if (player === "rock" && cpu === "paper" ||
+             player === "paper" && cpu === "scissors" ||
+             player === "scissors" && cpu === "rock") {
     return "player lose";
   }
 }
-
 
 rock.addEventListener("click", (e) => {
   const playerChoice = e.currentTarget.value;
@@ -39,6 +40,7 @@ paper.addEventListener("click", (e) => {
   drawGameResult.textContent = result;
   gameContainer.appendChild(drawGameResult);
 });
+
 scissors.addEventListener("click", (e) => {
   const playerChoice = e.currentTarget.value;
   const result = getResult(playerChoice, computerChoice());
