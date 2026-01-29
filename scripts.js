@@ -5,11 +5,20 @@ const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 
 let playerChoice;
-let computerChoice;
+let computerChoice
+function computerChoice() {
+const CHOICES = ["rock", "paper", "scissors"];
+const pick = Math.floor(Math.random() * CHOICES.length);
+const choice = CHOICES[pick];
+return choice;
+}
+function castDie(playerChoice, computerChoice) {
+  
+}
+
 
 rock.addEventListener("click", () => {
-  computerChoice = gameRNG();
-  playerChoice = rock;
+  castDie(rock, computerChoice());
 })
 paper.addEventListener("click", () => {
   computerChoice = gameRNG();
