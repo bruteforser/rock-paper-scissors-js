@@ -2,6 +2,8 @@ const gameContainer = document.querySelector("#game-wrapper");
 const drawGameResult = document.createElement("div");
 const playerIconCell = document.getElementById("player-icon");
 const cpuIconCell = document.getElementById("cpu-icon");
+let playerScore = 0;
+let cpuScore = 0;
 
 const ICONS = {
   rock: "fa-hand-back-fist",
