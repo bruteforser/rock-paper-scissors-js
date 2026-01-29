@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "Ubuntu Sans Mono";
+  src: url("./assets/fonts/UbuntuSansMono-VariableFont_wght.ttf") format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu Sans Mono";
+  src: url("./assets/fonts/UbuntuSansMono-Italic-VariableFont_wght.ttf") format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  display: grid;
+}
+
+body {
+  min-height: 100vh;
+  place-items: center;
+  font-family: "Ubuntu Sans Mono", monospace; 
+}
+
+#game-wrapper {
+  place-items: center;
+}
+
+#game-wrapper h1 {
+  margin-bottom: 40px;
+}
+
