@@ -3,6 +3,10 @@ const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 const gameContainer = document.querySelector("#game-wrapper");
 const drawGameResult = document.createElement("div");
+const drawCpuChoice = document.createElement("div");
+const icon = document.createElement("i");
+
+
 
 // Define choices
 const CHOICES = ["rock", "paper", "scissors"];
@@ -29,21 +33,45 @@ function getResult(player, cpu) {
 
 rock.addEventListener("click", (e) => {
   const playerChoice = e.currentTarget.value;
-  const result = getResult(playerChoice, computerChoice());
+  const cpuChoice = computerChoice();
+  const result = getResult(playerChoice, cpuChoice);
   drawGameResult.textContent = result;
   gameContainer.appendChild(drawGameResult);
+  // rock case
+  gameContainer.appendChild(drawCpuChoice);
+  icon.classList.add("fa-regular", "fa-hand-back-fist");
+  drawCpuChoice.appendChild(icon);
+
 });
 
+
+
 paper.addEventListener("click", (e) => {
+  const cpuChoice = computerChoice();
   const playerChoice = e.currentTarget.value;
-  const result = getResult(playerChoice, computerChoice());
+  const result = getResult(playerChoice, cpuChoice);
   drawGameResult.textContent = result;
   gameContainer.appendChild(drawGameResult);
+
+  
+
+  // paper case
+  gameContainer.appendChild(drawCpuChoice);
+  icon.classList.add("fa-regular", "fa-hand");
+  drawCpuChoice.appendChild(icon);
+
 });
 
 scissors.addEventListener("click", (e) => {
+  const cpuChoice = computerChoice();
   const playerChoice = e.currentTarget.value;
-  const result = getResult(playerChoice, computerChoice());
+  const result = getResult(playerChoice, cpuChoice);
   drawGameResult.textContent = result;
   gameContainer.appendChild(drawGameResult);
+
+  // scissors case
+  gameContainer.appendChild(drawCpuChoice);
+  icon.classList.add("fa-regular", "fa-hand-scissors");
+  drawCpuChoice.appendChild(icon);
+
 });
