@@ -37,5 +37,9 @@ body {
   margin-bottom: 40px;
 }
 
-
+#result-row {
+  position: absolute;
+  top: 25%;
+  left: 25%; 
+}
 

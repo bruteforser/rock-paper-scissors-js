@@ -10,10 +10,6 @@
   <body>
     <div id="game-wrapper">
       <h1>Rock, Paper, Scissors</h1>
-      <div id="result-row">
-        <div id="player-icon"></div>
-        <div id="cpu-icon"></div>
-      </div>
 
       <div class="choices">
         <button type="button" id="rock" value="rock">
@@ -25,7 +21,22 @@
         <button type="button" id="scissors" value="scissors">
           <i class="fa-regular fa-hand-scissors"></i>
         </button>
+
+        <table id="result-row">
+          <caption>game</caption>
+          <thead>
+            <th>PLAYER</th>
+            <th>CPU</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="player-icon"></td>
+              <td id="cpu-icon"></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+      
     </div>
     <script
       src="https://kit.fontawesome.com/ff70fe0a39.js"
