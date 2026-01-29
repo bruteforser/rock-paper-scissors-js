@@ -2,6 +2,9 @@ const gameContainer = document.querySelector("#game-wrapper");
 const drawGameResult = document.createElement("div");
 const playerIconCell = document.getElementById("player-icon");
 const cpuIconCell = document.getElementById("cpu-icon");
+const playerScoreCell = document.getElementById("player-score");
+const cpuScoreCell = document.getElementById("cpu-score");
+
 let playerScore = 0;
 let cpuScore = 0;
 
@@ -18,6 +21,11 @@ function drawChoice(cell, choice) {
   cell.appendChild(icon);
 }
 
+function drawScore(cell, score) {
+  cell.textContent = score;
+  
+}
+
 const CHOICES = ["rock", "paper", "scissors"];
 
 function computerChoice() {
@@ -32,10 +40,14 @@ function getResult(player, cpu) {
   } else if (player === "rock" && cpu === "scissors" ||
     player === "paper" && cpu === "rock" ||
     player === "scissors" && cpu === "paper") {
+      playerScore++;
+      
     return "player win";
   } else if (player === "rock" && cpu === "paper" ||
     player === "paper" && cpu === "scissors" ||
     player === "scissors" && cpu === "rock") {
+    
+      cpuScore++;
     return "player lose";
   }
 }
@@ -52,5 +64,7 @@ gameContainer.addEventListener("click", (e) => {
   gameContainer.appendChild(drawGameResult);
   drawChoice(playerIconCell, playerChoice);
   drawChoice(cpuIconCell, cpuChoice);
+  drawScore(playerScoreCell, playerScore);
+  drawScore(cpuScoreCell, cpuScore);
 
 });
