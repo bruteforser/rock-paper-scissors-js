@@ -26,19 +26,22 @@ function getResult(player, cpu) {
 }
 
 
-rock.addEventListener("click", () => {
-  const result = getResult(rock, computerChoice());
+rock.addEventListener("click", (e) => {
+  const playerChoice = e.currentTarget.value;
+  const result = getResult(playerChoice, computerChoice());
   drawGameResult.textContent = result;
-  container.appendChild(drawGameResult);
+  gameContainer.appendChild(drawGameResult);
 });
 
-paper.addEventListener("click", () => {
-  const result = getResult(paper, computerChoice());
+paper.addEventListener("click", (e) => {
+  const playerChoice = e.currentTarget.value;
+  const result = getResult(playerChoice, computerChoice());
   drawGameResult.textContent = result;
-  container.appendChild(drawGameResult);
+  gameContainer.appendChild(drawGameResult);
 });
-scissors.addEventListener("click", () => {
-  const result = getResult(scissors, computerChoice());
+scissors.addEventListener("click", (e) => {
+  const playerChoice = e.currentTarget.value;
+  const result = getResult(playerChoice, computerChoice());
   drawGameResult.textContent = result;
-  container.appendChild(drawGameResult);
+  gameContainer.appendChild(drawGameResult);
 });
