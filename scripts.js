@@ -1,24 +1,31 @@
-const gameRNG = () => Math.floor(Math.random() * 3);
-
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 
-let playerChoice;
-let computerChoice
-function computerChoice() {
+// Define choices
 const CHOICES = ["rock", "paper", "scissors"];
-const pick = Math.floor(Math.random() * CHOICES.length);
-const choice = CHOICES[pick];
-return choice;
+
+function computerChoice() {
+  const pick = Math.floor(Math.random() * CHOICES.length);
+  const choice = CHOICES[pick];
+  return choice;
 }
-function castDie(playerChoice, computerChoice) {
-  
+
+function getResult(player, cpu) {
+  if (player === cpu) {
+    return "tie";
+  } else if (player === "rock" && cpu === "paper" ||
+             player === "paper" && cpu === "rock" ||
+             player === "scissors" && cpu === "paper") {
+    return "player win";
+  } else {
+    return "player lose";
+  }
 }
 
 
 rock.addEventListener("click", () => {
-  castDie(rock, computerChoice());
+  getResult(rock, computerChoice());
 })
 paper.addEventListener("click", () => {
   computerChoice = gameRNG();
